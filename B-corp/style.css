@@ -1,0 +1,54 @@
+*,*::before,*::after,html{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+:root{
+    /* base colors */
+    --B-black:#202020;
+    --B-grey62:#4a4a4a;
+    --B-grey93:#efefef;
+    --B-grey97:#f8f8f8;
+    --B-white:#ffffff;
+
+    /* primary colors */
+    --P-yellow:#e0b31e;
+    --P-yellow90:#fcf7e8;
+    --P-orange:#e09b44;
+    --P-orange90:#fcf5ec;
+    --P-blue:#73c9c3;
+    --P-blue90:#f1faf9;
+    --P-green:#7aba4a;
+    --P-blue90:#f2f8ed;
+
+    /* text size */
+    
+
+    /* paddings & margin */
+
+
+
+}
+
+/* mobile first */
+body{
+    background-color: var(--P-yellow90);
+    color: var(--B-black);
+    /* grid-template-columns: ; */
+ }
+
+header{ }
+
+main{ }
+
+
+/* mobile first */
+
+@media (0px < width < 576px ){ }
+@media (576px < width < 767px ){ }
+
+@media (width >= 768px ){ }
+@media (width > 1200px ){ }
+@media (width > 1560px ){ }
