@@ -1,8 +1,15 @@
 *,*::before,*::after,html{
-    box-sizing: border-box;
+    box-sizing:border-box;
     margin: 0;
     padding: 0;
     list-style: none;
+    /* outline: solid  var(--B-black) ; */
+}
+
+html{
+    max-width: 100vw;
+    /* overflow: scroll; */
+    
 }
 
 :root{
@@ -21,7 +28,7 @@
     --P-blue:#73c9c3;
     --P-blue90:#f1faf9;
     --P-green:#7aba4a;
-    --P-blue90:#f2f8ed;
+    --P-green90:#f2f8ed;
 
     /* text size */
     
@@ -29,26 +36,100 @@
     /* paddings & margin */
 
 
+    
+
 
 }
 
 /* mobile first */
 body{
-    background-color: var(--P-yellow90);
+    background-color: var(--B-grey62);
     color: var(--B-black);
-    /* grid-template-columns: ; */
+    /* transition: .1s; */
+    outline: solid red;
+    /* width: 100vw; */
+    /* height: 100vh; */
+    position: relative;
+    display: grid;
+    /* grid-template-columns: 
+    minmax(0px,1fr)  
+    repeat(4,25px)  
+    minmax(0px,1fr); */
+    grid-template-rows:max-content;
+    column-gap: 40px;
+
+    
+    
+   
  }
 
-header{ }
+header{ 
+    background-color: var(--B-white);
+    width: 100%;
+    grid-column: 1/13 ;
+    height: 5rem;
+    
+}
 
-main{ }
 
+main{  
+    /* display: grid;
+    grid-template-columns: subgrid;
+    background-color: #4a4a4a; */
+    grid-column: 2/-2 ;
+    background-color: var(--B-black);
+    color: #e09b44;
+    height: 500vh;
+}
+footer{
+    grid-column: 1/-1;
+    background-color: grey;
+}
 
 /* mobile first */
 
-@media (0px < width < 576px ){ }
-@media (576px < width < 767px ){ }
 
-@media (width >= 768px ){ }
-@media (width > 1200px ){ }
-@media (width > 1560px ){ }
+@media ( min-width: 576px ){
+    body{
+        background-color: var(--P-orange);
+        grid-template-columns: 
+        minmax(0px,1fr) 
+        repeat(10,18px) 
+        minmax(0px,1fr);
+        column-gap: 30px;
+    }
+ }
+
+@media (min-width: 768px ){
+    body{
+        background-color: var(--P-blue);
+        grid-template-columns: 
+        minmax(0px,1fr) 
+        repeat(10,24px) 
+        minmax(0px,1fr);
+        column-gap: 40px;
+    }
+ }
+@media (min-width: 1200px ){
+    body{
+        background-color: var(--P-yellow);
+    
+        grid-template-columns: 
+        minmax(0px,1fr) 
+        repeat(10,60px) 
+        minmax(0px,1fr);
+        column-gap: 40px;
+        
+    }
+ }
+@media (min-width: 1560px){
+    body{
+        background-color: var(--P-blue90);
+        grid-template-columns: 
+        minmax(0px,1fr) 
+        repeat(10,90px) 
+        minmax(0px,1fr);
+        column-gap: 40px;
+    }
+   
+ }
