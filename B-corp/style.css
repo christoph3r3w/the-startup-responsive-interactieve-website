@@ -10,12 +10,18 @@
 html{
     /* max-width: 100vw; */
     overflow: hidden;
-    animation: appear 13s forwards ;
-    animation-delay: 8s;
+    animation: appear-scroll 13s forwards ;
+    animation: appear-scroll 1s forwards ;
+    /* animation-delay: var(--T-animation-intro); */
+
+    /* > * p {
+        color: #7aba4a;
+        line-height: minmax();
+    } */
 }
 
 
-@keyframes appear {
+@keyframes appear-scroll {
     to{
         overflow: auto;
     }
@@ -45,7 +51,8 @@ html{
     /* paddings & margin */
 
 
-    
+    /* timing */
+    --T-animation-intro : 3.7s;
 
 
 }
@@ -64,12 +71,18 @@ body{
     [ct-end]
     minmax(0px,auto); 
     grid-template-rows:min-content;
-    column-gap: 40px;
-   
-    
-    
-   
+    column-gap: 40px;  
  }
+
+ /* ask about this  */
+ body*:nth-child(n){
+    container: awor / normal;
+ }
+
+ @container awor (0 < width < 400px) {
+    font-size: 20px ;
+    color: green;
+  }
 
 header{ 
     /* outline: solid blue; */
@@ -127,22 +140,44 @@ main section{
     width: 100svw;
     height: 100vh;
     translate: 0px -5rem;
-    animation:expand 5s forwards;
-    animation-delay: 5s;
-    
+    /* animation:expand var(--T-animation-intro) forwards; */
+    animation-delay: var(--T-animation-intro);
+    z-index: 0;
 }
 
 @keyframes expand {
-   from{
-    
-   }
+    from{
+         z-index: 3;
+    }
+     to{
+         width: 100%;
+         height: 90vh;
+         translate: 0px 0px;
+         opacity: 1;
+     }
+     
+ }
+
+.intro h2{
+    z-index: -1;
+    color: #202020;
+    opacity: 0;
+    animation: appear var(--T-animation-intro) forwards var(--T-animation-intro) ;
+}
+
+@keyframes appear {
+
     to{
-        width: 100%;
-        height: 90vh;
-        translate: 0px 0px;
+        opacity: 1;
     }
     
 }
+
+.intro p{
+    z-index: 3;
+}
+
+
 
 footer{
     grid-column:2/-2;
