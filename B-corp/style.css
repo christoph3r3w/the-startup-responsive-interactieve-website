@@ -59,11 +59,11 @@ html{
 
 /* mobile first */
 body{
-    background-color: var(--B-grey62);
+    background-color: var(--B-white);
     color: var(--B-black);
-    outline: solid red;
+    /* outline: solid red; */
+
     display: grid;
-    /* min-height: 100vh; */
     grid-template-columns: 
     minmax(0px,auto)  
     [ct-start]
@@ -75,14 +75,14 @@ body{
  }
 
  /* ask about this  */
- body*:nth-child(n){
+ /* body*:nth-child(n){
     container: awor / normal;
  }
 
  @container awor (0 < width < 400px) {
     font-size: 20px ;
     color: green;
-  }
+  } */
 
 header{ 
     /* outline: solid blue; */
@@ -114,11 +114,45 @@ main{
     grid-template-columns: subgrid;
     background-color: var(--B-white);
     /* background-color: var(--B-black); */
-    color: #e09b44;
     place-items:center ;
     /* min-height: 50vh; */
 
     
+}
+
+/* for the meantime / measurments */
+section{
+    article{
+        padding-bottom: 80px;
+    }
+    .main-topic{
+        padding-bottom: 40px;
+
+        h2{
+            line-height: 2em;
+        }
+    }
+
+    ol{
+        display: flex;
+        flex-direction: column;
+        gap: 40px ;
+    }
+    .sub-topic{
+
+        div{
+            padding-bottom: 15px;
+            
+        }
+        .value{
+            font-size: 24px ;
+            &::after{content: '%';}
+        }
+        & h3 {
+            line-height: 2em;
+            color: red;
+        }
+    }
 }
 
 main section{
@@ -140,7 +174,7 @@ main section{
     width: 100svw;
     height: 100vh;
     translate: 0px -5rem;
-    /* animation:expand var(--T-animation-intro) forwards; */
+    animation:expand var(--T-animation-intro) forwards;
     animation-delay: var(--T-animation-intro);
     z-index: 0;
 }
@@ -154,16 +188,31 @@ main section{
          height: 90vh;
          translate: 0px 0px;
          opacity: 1;
+         z-index: 0;
      }
      
  }
 
-.intro h2{
-    z-index: -1;
-    color: #202020;
-    opacity: 0;
-    animation: appear var(--T-animation-intro) forwards var(--T-animation-intro) ;
-}
+ .intro article{
+
+    position: relative;
+    margin-inline: 1rem;
+
+    h2{
+        font-size: clamp(28px,4rem,38px);
+        padding-bottom: 15px;
+        z-index: -1;
+        color: #202020;
+        opacity: 0;
+        animation: appear var(--T-animation-intro) forwards var(--T-animation-intro) ;
+    }
+    p{
+        z-index: 3;
+    }
+
+ }
+
+ 
 
 @keyframes appear {
 
@@ -171,10 +220,6 @@ main section{
         opacity: 1;
     }
     
-}
-
-.intro p{
-    z-index: 3;
 }
 
 
@@ -187,22 +232,73 @@ footer{
     /* contain:content; */
     display: grid;
     grid-template-columns: subgrid;
+    row-gap:40px ;
+    padding-top: 60px;
+    padding-bottom: 40px;
+   
+}
+
+footer::before{
+    /content: '';
+    position: absolute;
+    background-color: var(--B-grey62);
+    width: 141%;
+    height: 1px;
+    /* outline: solid red; */
+    translate: -15vw -5vh;
+
 }
 
 footer section{
     /* background-color: var(--P-orange90); */
     grid-column: ct;
     height: min-content;
+    /* padding: 1em .5em; */
     /* outline: solid ; */
+
+
     
-    > *:nth-child(n){
-        padding: 0 1em;
+    
+
+    &:nth-of-type(1){
+        position: relative; 
+        display: flex;
+        gap: 40px;
+
+        div{
+            display: flex;
+            gap: 15px;
+        }
+    }
+
+    &:has(h3 + ul){
+        display: flex;
+        flex-direction: column;
+        gap:20px ;
+
+        h3{line-height: 1.6;}
+
+        ul{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            li{line-height: 1.6;}
+        }
     }
     
     &:nth-of-type(4){
-        position: relative;
+        position: relative; 
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+
+        :nth-child(3){
+            margin-inline:20px ;
+        }
         
     }
+
     &:nth-of-type(5){
        
         /* height: 3rem; */
@@ -211,13 +307,20 @@ footer section{
             display: flex;
             flex-direction: column;
             align-items: center;
+            gap: 40px;
+            padding-bottom: 40px;
         }
+        
         .soicial-links{
             margin-top: 1rem;
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
+            gap: 40px;
         }
     }
+
+    
+
 }
 
 
