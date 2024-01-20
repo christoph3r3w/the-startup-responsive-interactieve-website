@@ -56,7 +56,7 @@ html {
   --T-animation-intro: 3.7s;
 
   /* sub topic */
-  --sub-height:32vh; /*sub-topic height*/
+  --sub-height:40vh; 
 }
 
 /* mobile first */
@@ -170,13 +170,14 @@ section {
     }
     .value {
       font-size: 24px;
+    
       &::after {
         content: "%";
       }
     }
     & h3 {
       line-height: 2em;
-      color: red;
+      /* color: red; */
     }
     &:nth-last-of-type(1){
         height: 15rem;
@@ -200,16 +201,16 @@ main section {
 
 .intro {
     text-align: center;
-    outline: solid red;
+    /* outline: solid red; */
     width: 97svw;
     height: 100vh;
     translate: 0px -5rem;
     animation: expand var(--T-animation-intro) forwards;
-    animation-delay: var(--T-animation-intro);
+    /* animation-delay: var(--T-animation-intro); */
     z-index: 0;
   }
   
-  /* @keyframes expand {
+  @keyframes expand {
     from {
       z-index: 3;
     }
@@ -220,7 +221,7 @@ main section {
       opacity: 1;
       z-index: 0;
     }
-  } */
+  }
 
 .intro article {
     position: relative;
@@ -252,26 +253,39 @@ article{
     /* outline: solid blue; */
 }
 
+.article-container  div:has(img){
+  
+  position: sticky;
+  bottom: 2%;
+
+  img{
+    width: 100% ;
+    z-index: 20;
+  }
+}
+
 /* ---- main topic section ---- */
 
 .main-topic{
     background-color: var(--B-white);
     position: sticky;
     top: 0;
-    padding-top: 3rem;
-    margin-bottom: 14vh;
-
+    height: min-content;
+    padding-top: 10%;
+    margin-bottom: 13vh;
     z-index: 20;
 }
-
-
-
 
 /* ---- sub topic section ---- */
 
 .sub-topic-container{
     /* outline: solid #7aba4a; */
     z-index: 0;
+    width: 100%;
+}
+
+.value{
+  color: var(--P-blue);
 }
 
 .sub-topic{
@@ -281,8 +295,7 @@ article{
     /* top:  calc(25vh + var(--index) * var(--card-top-offset)); */
     position: sticky;
     transform-origin: 50% 0%;
-    border-radius: 2pc ;
-    /* border: 1px solid var(--B-grey62); */
+    border-radius: 1pc;
     padding: 1rem;
 
     &:nth-of-type(1){--index: 1;}
@@ -316,20 +329,11 @@ article{
     
 }
 
-.article-container  div:has(img){
-  
-  position: sticky;
-  bottom: 4rem;
 
-  img{
-    width: 100% ;
-    z-index: 20;
-  }
-}
 
 .results .sub-topic{
     /* top: 35vh; */
-    transition: 2s linear;
+    /* transition: 2s linear; */
 
     &:nth-of-type(1){
         top:  calc(25vh + var(--index) * calc(var(--card-top-offset) + 1em));
@@ -358,7 +362,7 @@ article{
 
 }
 
-.ending .soliciteren{
+.ending .solliciteren{
 
   img{
     width: 100% ;
@@ -411,15 +415,14 @@ footer {
   padding-bottom: 40px;
 }
 
-/* footer::before {
-  /content: "";
+footer::before {
+  content: "";
   position: absolute;
   background-color: var(--B-grey62);
-  width: 141%;
+  width: 100%;
   height: 1px;
-  outline: solid red;
-  translate: -15vw -5vh;
-} */
+  /* translate: -15vw -5vh; */
+}
 
 footer section {
   /* background-color: var(--P-orange90); */
@@ -464,11 +467,15 @@ footer section {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+    border-bottom: solid 1px var(--B-grey62);
+    border-top: solid 1px var(--B-grey62) ;
+    padding: 30px 0px;
 
     :nth-child(3) {
       margin-inline: 20px;
     }
   }
+  
 
   &:nth-of-type(5) {
     /* height: 3rem; */
@@ -559,15 +566,16 @@ footer section {
 
 @media (min-width: 768px) {
   body {
-    background-color: var(--P-blue);
+    background-color: var(--B-white);
+    /* background-color: var(--P-blue); */
     grid-template-columns:
       minmax(0px, auto)
       [ct-start]
       repeat(3, 24px)
       [m-start]
-      repeat(3, 24px)
+      repeat(4, 24px)
       [mid]
-      repeat(3, 24px)
+      repeat(4, 24px)
       [m-end]
       repeat(3, 24px)
       [ct-end]
@@ -575,24 +583,50 @@ footer section {
     column-gap: 40px;
   }
   main{
-    .timeline .results{
-      .main-topic{
+    .timeline,.timeline.results {
+      .main-topic,.sub-topic,div:has(img){
         position: relative;
+        top: 0;
+        margin: 0;
+        grid-area: ct;
       }
+
+      .main-topic{
+        padding-inline-start: 1rem;
+        margin-bottom: 40px;
+        width: 65%;
+        word-break: keep-all;
+
+      }
+
       .sub-topic-container{
         display: flex;
         flex-direction: row;
-       
+        flex-wrap: wrap;
+        margin-bottom:40px ;
       }
+
+      
       .sub-topic{
         position: relative;
-        top: 0;
-         outline: solid;
+        animation: unset;
+        opacity: 1;
+        width: 40%;
+        height: auto;
       }
       .sub-topic:nth-last-of-type(1){
         display: none;
       }
     }
+
+    .ending{
+      grid-column: m;
+    }
+
+    .solliciteren{
+      display: none;
+    }
+
 
   }
 
