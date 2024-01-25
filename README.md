@@ -1,15 +1,26 @@
-> _Fork_ deze leertaak en ga aan de slag. Onderstaande outline ga je gedurende deze taak in jouw eigen GitHub omgeving uitwerken. De instructie vind je in: [docs/INSTRUCTIONS.md](docs/INSTRUCTIONS.md)
+# Unc-Inc
+in sprint 6 I worked on a page for Uninc that highlights their achievement of becoming a B-corp company 
 
-# Titel
-<!-- Geef je project een titel en schrijf in één zin wat het is -->
+## Contacts 
+Floris De Langen
 
-## Beschrijving
-<!-- In de Beschrijving staat hoe je project er uit ziet, hoe het werkt en wat je er mee kan. -->
-<!-- Voeg een mooie poster visual toe 📸 -->
-<!-- Voeg een link toe naar Github Pages 🌐-->
+Martijn Houtman
 
-## Kenmerken
-<!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met JS gedaan en hoe? -->
+## Dates
+Request : 8 jan 2024
+
+Submission: 25 jan 2024
+
+## Background information
+Unc Inc is a company that creates not only websites but also apps for other
+companies. They consciously work mainly on social projects, and also say no
+to projects that they feel do not fit their company and or vision. They are also
+officially became a B-corp certified company in 2023, in short, they are doing good!
+
+## Terms and conditions 
+The site should be responsive and follow the given "huis stijl". it should be accessible according to the WCAG guidelines and will be written in english.
+
+
 
 ## Licentie
 
