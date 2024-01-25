@@ -1,5 +1,9 @@
 const counters = document.querySelectorAll('.value');
 const speed = 2000;
+let body = document.querySelector('body')
+let root = document.querySelector(':root')
+let darkBtn = document.querySelector('.dark')
+
 
 counters.forEach( counter => {
    const animate = () => {
@@ -16,5 +20,14 @@ counters.forEach( counter => {
      
    }
    
+   
    animate();
 });
+
+
+ darkBtn.addEventListener('click',(e)=>{
+
+  root.classList.toggle('darkmode')
+  body.classList.toggle('darkmode')
+  //alert('yes')
+ })
