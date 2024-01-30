@@ -1,6 +1,9 @@
 # Unc-Inc
 in sprint 6 I worked on a page for Uninc that highlights their achievement of becoming a B-corp company 
 
+![Screenshot 2024-01-12 114147](https://github.com/christoph3r3w/the-startup-responsive-interactieve-website/assets/144007933/dc35620b-e8ad-48b3-bdb8-041aada81d5c)
+
+
 ## Contacts 
 Floris De Langen
 
