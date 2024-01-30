@@ -141,7 +141,8 @@ header {
   }
 
   nav ul{
-    display: flex;
+    display: none;
+    
     gap: 1rem;
     flex-direction: row;
   }
@@ -313,10 +314,6 @@ main section {
 
 /* ----- section & article ----- */
 
-article{
-    /* outline: solid blue; */
-}
-
 .article-container  div:has(img){
   
   position: sticky;
@@ -393,8 +390,6 @@ article{
     
 }
 
-
-
 .results .sub-topic{
 
     &:nth-of-type(1){
@@ -462,7 +457,7 @@ article{
 }
 
 
-
+/* ------- footer ------- */
 
 footer {
   grid-column: 2/-2;
@@ -559,7 +554,7 @@ footer section {
   }
 }
 
-/* mobile first */
+/* ----- mobile first media queries ---- */
 
 @media (min-width: 576px) {
   body {
@@ -757,8 +752,12 @@ footer section {
   }
 
   header {
-    nav ul{
+
+    
+    nav {
       display: flex;
+      outline: solid;
+      justify-content: space-around;
     
   }
   }
@@ -828,5 +827,12 @@ footer section {
       repeat(3, 90px)
       [ct-end]
       minmax(0px, auto);
+  }
+
+  header {
+    nav ul{
+      display: flex;
+      width: 100%;
+      }
   }
 }
